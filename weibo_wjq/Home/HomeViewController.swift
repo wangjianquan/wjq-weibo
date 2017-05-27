@@ -54,10 +54,9 @@ extension HomeViewController {
 
 //MARK: -- 点击事件
 extension HomeViewController{
+    //MARK: --标题按钮
     @objc fileprivate func titleBtnClick(btn: TitleButton) {
-        
-        
-        //. 弹出视图
+        //1. . 弹出视图
         let popview = UIStoryboard(name: "PopViewController", bundle: nil)
         guard let menuView = popview.instantiateInitialViewController() else { return  }
 
@@ -70,11 +69,22 @@ extension HomeViewController{
         menuView.modalPresentationStyle = .custom
         present(menuView, animated: true, completion: nil)
     }
+    
+    //MARK: -- 左侧item事件
     @objc fileprivate func leftBarButtonItemClick() {
         Dlog("leftBarButtonItemClick")
     }
+    
+    //MARK: -- 右侧item事件
     @objc fileprivate func rightBarButtonItemClick() {
-        Dlog("rightBarButtonItemClick")
+        
+        let QRCodeVC  = UIStoryboard(name: "QRCode", bundle: nil)
+        guard  let qrcodeView = QRCodeVC.instantiateInitialViewController() else { return
+        }
+        present(qrcodeView, animated: true, completion: nil)
+        
+    
+    
     }
 }
 

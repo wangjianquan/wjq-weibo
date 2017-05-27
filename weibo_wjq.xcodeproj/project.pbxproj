@@ -11,6 +11,8 @@
 		7C39575E1ED681BF00CB28A7 /* WjPresentationCoutro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39575D1ED681BF00CB28A7 /* WjPresentationCoutro.swift */; };
 		7C3957601ED6C11C00CB28A7 /* PopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39575F1ED6C11C00CB28A7 /* PopAnimation.swift */; };
 		7C3957641ED6C9E000CB28A7 /* PopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3957631ED6C9E000CB28A7 /* PopViewController.storyboard */; };
+		7C39576D1ED8111700CB28A7 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39576B1ED8111600CB28A7 /* QRCodeViewController.swift */; };
+		7C39576F1ED814AB00CB28A7 /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C39576E1ED814AB00CB28A7 /* QRCode.storyboard */; };
 		7C643F561ECAE44C00625748 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C643F551ECAE44C00625748 /* AppDelegate.swift */; };
 		7C643F5B1ECAE44C00625748 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C643F591ECAE44C00625748 /* Main.storyboard */; };
 		7C643F5D1ECAE44C00625748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C643F5C1ECAE44C00625748 /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		7C39575D1ED681BF00CB28A7 /* WjPresentationCoutro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WjPresentationCoutro.swift; sourceTree = "<group>"; };
 		7C39575F1ED6C11C00CB28A7 /* PopAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimation.swift; sourceTree = "<group>"; };
 		7C3957631ED6C9E000CB28A7 /* PopViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopViewController.storyboard; sourceTree = "<group>"; };
+		7C39576B1ED8111600CB28A7 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		7C39576E1ED814AB00CB28A7 /* QRCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
 		7C643F521ECAE44C00625748 /* weibo_wjq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo_wjq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C643F551ECAE44C00625748 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C643F5A1ECAE44C00625748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +99,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7C3957691ED810D700CB28A7 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				7C39576B1ED8111600CB28A7 /* QRCodeViewController.swift */,
+				7C39576E1ED814AB00CB28A7 /* QRCode.storyboard */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
 		7C643F491ECAE44C00625748 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +157,7 @@
 		7C643F681ECAF39C00625748 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7C3957691ED810D700CB28A7 /* QRCode */,
 				7C643F791ECEA33200625748 /* Home.storyboard */,
 				7C643F6E1ECAF4DB00625748 /* HomeViewController.swift */,
 			);
@@ -286,6 +300,7 @@
 				7C643F7D1ECEA36C00625748 /* Message.storyboard in Resources */,
 				7C643F5B1ECAE44C00625748 /* Main.storyboard in Resources */,
 				7C643F871ED2D05600625748 /* More.storyboard in Resources */,
+				7C39576F1ED814AB00CB28A7 /* QRCode.storyboard in Resources */,
 				7C643F7B1ECEA33200625748 /* Home.storyboard in Resources */,
 				7C643F821ECEA3AD00625748 /* Profile.storyboard in Resources */,
 				7C3957641ED6C9E000CB28A7 /* PopViewController.storyboard in Resources */,
@@ -358,6 +373,7 @@
 				7C643F6F1ECAF4DB00625748 /* HomeViewController.swift in Sources */,
 				7C643FA91ED53A9B00625748 /* UIBarButtonItem+ Extension.swift in Sources */,
 				7C39575C1ED67B1300CB28A7 /* PopViewController.swift in Sources */,
+				7C39576D1ED8111700CB28A7 /* QRCodeViewController.swift in Sources */,
 				7C39575E1ED681BF00CB28A7 /* WjPresentationCoutro.swift in Sources */,
 				7C3957601ED6C11C00CB28A7 /* PopAnimation.swift in Sources */,
 				7C643F991ED41A0800625748 /* BaseViewController.swift in Sources */,
