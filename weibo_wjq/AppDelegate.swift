@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         //欢迎界面
-        let sb = UIStoryboard(name: "Welcome", bundle: nil)
+//        let sb = UIStoryboard(name: "Welcome", bundle: nil)
+     let sb = UIStoryboard(name: "Newfeature", bundle: nil)
         let vc = sb.instantiateInitialViewController()
         window?.rootViewController = vc
         window?.makeKeyAndVisible()

@@ -28,7 +28,7 @@ class WelcomeViewController: UIViewController {
             return
         }
         avatorImageView.sd_setImage(with: url)
-
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -47,6 +47,5 @@ class WelcomeViewController: UIViewController {
     
     }
     
-
     
 }

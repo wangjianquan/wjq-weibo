@@ -33,13 +33,22 @@ extension UIButton {
      2.遍历构造函数init前面需要加载convenience
      3.在遍历构造函数中需要明确的调用self.init()
      */
-  convenience  init(normalImg: String, seleImg: String) {
+  convenience  init(normalImg: String?, seleImg: String?)
+  {
         self.init()
-        setImage(UIImage(named:normalImg), for: .normal)
-        setImage(UIImage(named:normalImg+"_highlighted"), for: .highlighted)
-        setBackgroundImage(UIImage(named:seleImg), for: .normal)
-        setBackgroundImage(UIImage(named:seleImg+"highlighted"), for: .highlighted)
+        if let name = normalImg
+        
+        {
+            setImage(UIImage(named: name), for: .normal)
+            setImage(UIImage(named: name + "_highlighted"), for: .highlighted)
+        }
+        
+        if let sele = seleImg
+        {
+            setBackgroundImage(UIImage(named: sele), for: .normal)
+            setBackgroundImage(UIImage(named: sele + "highlighted"), for: .highlighted)
+        }
+    
         sizeToFit()
     }
-
 }
