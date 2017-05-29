@@ -41,9 +41,11 @@ extension HomeViewController {
        //右侧按钮
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action:#selector(HomeViewController.rightBarButtonItemClick))
 
+       
 
     //MARK: -- 2. 标题按钮
-        titleBtn.setTitle("白小黑", for: .normal)
+       let title = UserAccount.loadAccount()?.screen_name
+        titleBtn.setTitle(title, for: .normal)
         titleBtn.addTarget(self, action: #selector(HomeViewController.titleBtnClick(btn:)), for: .touchUpInside)
         
         navigationItem.titleView = titleBtn

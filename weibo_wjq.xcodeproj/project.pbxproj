@@ -13,6 +13,17 @@
 		7C3957641ED6C9E000CB28A7 /* PopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3957631ED6C9E000CB28A7 /* PopViewController.storyboard */; };
 		7C39576D1ED8111700CB28A7 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39576B1ED8111600CB28A7 /* QRCodeViewController.swift */; };
 		7C39576F1ED814AB00CB28A7 /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C39576E1ED814AB00CB28A7 /* QRCode.storyboard */; };
+		7C3957711EDABF9900CB28A7 /* QRCodeCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3957701EDABF9900CB28A7 /* QRCodeCreateViewController.swift */; };
+		7C3957751EDAEF2700CB28A7 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3957731EDAEF2700CB28A7 /* OAuthViewController.swift */; };
+		7C3957781EDB019300CB28A7 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3957771EDB019300CB28A7 /* OAuth.storyboard */; };
+		7C39577A1EDB0DF000CB28A7 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3957791EDB0DF000CB28A7 /* NetworkTools.swift */; };
+		7C39577C1EDB1FDD00CB28A7 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39577B1EDB1FDD00CB28A7 /* Common.swift */; };
+		7C3C58DE1EDB31CA0074624D /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C58DD1EDB31CA0074624D /* UserAccount.swift */; };
+		7C3C58E01EDB98610074624D /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C58DF1EDB98610074624D /* String + Extension.swift */; };
+		7C3C58E31EDBF23F0074624D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C58E21EDBF23F0074624D /* WelcomeViewController.swift */; };
+		7C3C58E51EDBF2550074624D /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3C58E41EDBF2550074624D /* Welcome.storyboard */; };
+		7C3C58EB1EDC09190074624D /* NewfeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C58EA1EDC09190074624D /* NewfeatureViewController.swift */; };
+		7C3C58ED1EDC09280074624D /* Newfeature.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3C58EC1EDC09280074624D /* Newfeature.storyboard */; };
 		7C643F561ECAE44C00625748 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C643F551ECAE44C00625748 /* AppDelegate.swift */; };
 		7C643F5B1ECAE44C00625748 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C643F591ECAE44C00625748 /* Main.storyboard */; };
 		7C643F5D1ECAE44C00625748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C643F5C1ECAE44C00625748 /* Assets.xcassets */; };
@@ -44,6 +55,17 @@
 		7C3957631ED6C9E000CB28A7 /* PopViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopViewController.storyboard; sourceTree = "<group>"; };
 		7C39576B1ED8111600CB28A7 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		7C39576E1ED814AB00CB28A7 /* QRCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
+		7C3957701EDABF9900CB28A7 /* QRCodeCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeCreateViewController.swift; sourceTree = "<group>"; };
+		7C3957731EDAEF2700CB28A7 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		7C3957771EDB019300CB28A7 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
+		7C3957791EDB0DF000CB28A7 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		7C39577B1EDB1FDD00CB28A7 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		7C3C58DD1EDB31CA0074624D /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		7C3C58DF1EDB98610074624D /* String + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
+		7C3C58E21EDBF23F0074624D /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		7C3C58E41EDBF2550074624D /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		7C3C58EA1EDC09190074624D /* NewfeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureViewController.swift; sourceTree = "<group>"; };
+		7C3C58EC1EDC09280074624D /* Newfeature.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Newfeature.storyboard; sourceTree = "<group>"; };
 		7C643F521ECAE44C00625748 /* weibo_wjq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo_wjq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C643F551ECAE44C00625748 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C643F5A1ECAE44C00625748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,9 +125,31 @@
 			isa = PBXGroup;
 			children = (
 				7C39576B1ED8111600CB28A7 /* QRCodeViewController.swift */,
+				7C3957701EDABF9900CB28A7 /* QRCodeCreateViewController.swift */,
 				7C39576E1ED814AB00CB28A7 /* QRCode.storyboard */,
 			);
 			path = QRCode;
+			sourceTree = "<group>";
+		};
+		7C3957721EDAEEE200CB28A7 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				7C3957731EDAEF2700CB28A7 /* OAuthViewController.swift */,
+				7C3957771EDB019300CB28A7 /* OAuth.storyboard */,
+				7C3C58DD1EDB31CA0074624D /* UserAccount.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		7C3C58E11EDBF1D00074624D /* Newfeature */ = {
+			isa = PBXGroup;
+			children = (
+				7C3C58E21EDBF23F0074624D /* WelcomeViewController.swift */,
+				7C3C58E41EDBF2550074624D /* Welcome.storyboard */,
+				7C3C58EA1EDC09190074624D /* NewfeatureViewController.swift */,
+				7C3C58EC1EDC09280074624D /* Newfeature.storyboard */,
+			);
+			path = Newfeature;
 			sourceTree = "<group>";
 		};
 		7C643F491ECAE44C00625748 = {
@@ -129,6 +173,8 @@
 		7C643F541ECAE44C00625748 /* weibo_wjq */ = {
 			isa = PBXGroup;
 			children = (
+				7C3C58E11EDBF1D00074624D /* Newfeature */,
+				7C3957721EDAEEE200CB28A7 /* OAuth */,
 				7C643F761ECAF7A900625748 /* Tool */,
 				7C643F671ECAF36B00625748 /* Main */,
 				7C643F681ECAF39C00625748 /* Home */,
@@ -197,6 +243,8 @@
 				7C643FAD1ED586F800625748 /* Transition */,
 				7C643FA61ED53A9B00625748 /* Category */,
 				7C643FAB1ED53D1400625748 /* TitleButton.swift */,
+				7C3957791EDB0DF000CB28A7 /* NetworkTools.swift */,
+				7C39577B1EDB1FDD00CB28A7 /* Common.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -217,6 +265,7 @@
 			children = (
 				7C643FA71ED53A9B00625748 /* UIBarButtonItem+ Extension.swift */,
 				7C643FA81ED53A9B00625748 /* UIButton+Extension.swift */,
+				7C3C58DF1EDB98610074624D /* String + Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -299,10 +348,13 @@
 				7C643F5D1ECAE44C00625748 /* Assets.xcassets in Resources */,
 				7C643F7D1ECEA36C00625748 /* Message.storyboard in Resources */,
 				7C643F5B1ECAE44C00625748 /* Main.storyboard in Resources */,
+				7C3957781EDB019300CB28A7 /* OAuth.storyboard in Resources */,
+				7C3C58E51EDBF2550074624D /* Welcome.storyboard in Resources */,
 				7C643F871ED2D05600625748 /* More.storyboard in Resources */,
 				7C39576F1ED814AB00CB28A7 /* QRCode.storyboard in Resources */,
 				7C643F7B1ECEA33200625748 /* Home.storyboard in Resources */,
 				7C643F821ECEA3AD00625748 /* Profile.storyboard in Resources */,
+				7C3C58ED1EDC09280074624D /* Newfeature.storyboard in Resources */,
 				7C3957641ED6C9E000CB28A7 /* PopViewController.storyboard in Resources */,
 				7C643F801ECEA39300625748 /* Discover.storyboard in Resources */,
 				7C643F9E1ED4221500625748 /* VisitorView.xib in Resources */,
@@ -366,16 +418,24 @@
 			files = (
 				7C643F781ECAF8EB00625748 /* MainViewController.swift in Sources */,
 				7C643F561ECAE44C00625748 /* AppDelegate.swift in Sources */,
+				7C3C58E01EDB98610074624D /* String + Extension.swift in Sources */,
 				7C643F731ECAF50200625748 /* DiscoverViewController.swift in Sources */,
+				7C3957751EDAEF2700CB28A7 /* OAuthViewController.swift in Sources */,
+				7C3C58DE1EDB31CA0074624D /* UserAccount.swift in Sources */,
 				7C643FAA1ED53A9B00625748 /* UIButton+Extension.swift in Sources */,
 				7C643FAC1ED53D1400625748 /* TitleButton.swift in Sources */,
 				7C643F751ECAF51100625748 /* ProfileViewController.swift in Sources */,
 				7C643F6F1ECAF4DB00625748 /* HomeViewController.swift in Sources */,
 				7C643FA91ED53A9B00625748 /* UIBarButtonItem+ Extension.swift in Sources */,
+				7C3957711EDABF9900CB28A7 /* QRCodeCreateViewController.swift in Sources */,
+				7C3C58EB1EDC09190074624D /* NewfeatureViewController.swift in Sources */,
 				7C39575C1ED67B1300CB28A7 /* PopViewController.swift in Sources */,
+				7C3C58E31EDBF23F0074624D /* WelcomeViewController.swift in Sources */,
 				7C39576D1ED8111700CB28A7 /* QRCodeViewController.swift in Sources */,
 				7C39575E1ED681BF00CB28A7 /* WjPresentationCoutro.swift in Sources */,
 				7C3957601ED6C11C00CB28A7 /* PopAnimation.swift in Sources */,
+				7C39577A1EDB0DF000CB28A7 /* NetworkTools.swift in Sources */,
+				7C39577C1EDB1FDD00CB28A7 /* Common.swift in Sources */,
 				7C643F991ED41A0800625748 /* BaseViewController.swift in Sources */,
 				7C643F9A1ED41A0800625748 /* VisitorView.swift in Sources */,
 				7C643F711ECAF4EC00625748 /* MessageViewController.swift in Sources */,

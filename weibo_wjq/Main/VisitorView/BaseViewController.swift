@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
     lazy var visitorView : VisitorView = VisitorView.loadVisitorView()
     
     // MARK:- 定义变量
-    var isLogin : Bool = true
+    var isLogin = UserAccount.isLogin()
     
     // MARK:- 系统回调函数
     override func loadView() {
@@ -47,8 +47,21 @@ extension BaseViewController {
     @objc fileprivate func registerBtnClick() {
         print("registerBtnClick")
     }
+    
+    //登录
     @objc fileprivate func loginBtnClick() {
-            print("loginBtnClick")
+        
+        let oauth = UIStoryboard(name: "OAuth", bundle: nil)
+        
+       guard  let oauthVC = oauth.instantiateInitialViewController()
+        else { return }
+        
+        
+      present(oauthVC, animated: true, completion: nil)
+        
+        
+    
+    
     }
 
 }

@@ -11,6 +11,7 @@
 
 import UIKit
 import AVFoundation
+import SVProgressHUD
 
 class QRCodeViewController: UIViewController {
 
@@ -268,33 +269,43 @@ extension QRCodeViewController: UITabBarDelegate{
     }
 }
 
-
-extension QRCodeViewController : UINavigationControllerDelegate,UIImagePickerControllerDelegate{
+extension QRCodeViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate
+{
+    // 过时
+    //    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+    //
+    //    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        //        NJLog(info)
         
-     
-    //1. 取出图片
-        guard  let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+        // 1.取出选中的图片
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else
+        {
             return
         }
         
-       
-        guard let  ciimage = CIImage(image: image) else { return  }
-        
-        //2. 从选中的图片中读取二维码数据
-        
-        //2.1 创建一个探测器
-        let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])
-        
-       let results = detector?.features(in: ciimage)
-        for result in (results)! {
-            
+        guard let ciImage = CIImage(image: image) else
+        {
+            return
         }
-        picker(dismiss(animated: true, completion: nil))
+        
+        // 2.从选中的图片中读取二维码数据
+        // 2.1创建一个探测器
+        let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyLow])
+        // 2.2利用探测器探测数据
+        let results = detector?.features(in: ciImage)
+        // 2.3取出探测到的数据
+        for result in results!
+        {
+            Dlog((result as! CIQRCodeFeature).messageString)
+            
+            guard  let string = (result as! CIQRCodeFeature).messageString else { return }
+            SVProgressHUD.showInfo(withStatus: "识别的二维码信息为 \n" + string)
+        }
+        
+        // 注意: 如果实现了该方法, 当选中一张图片时系统就不会自动关闭相册控制器
+        picker.dismiss(animated: true, completion: nil)
     }
-
     
-
 }
-

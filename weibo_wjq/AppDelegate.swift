@@ -17,8 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         //设置全局颜色
         UITabBar.appearance().tintColor = UIColor.orange
-        
+        UINavigationBar.appearance().tintColor = UIColor.orange
        
+        window = UIWindow(frame:UIScreen.main.bounds)
+        window?.backgroundColor = UIColor.white
+        
+        
+        //欢迎界面
+        let sb = UIStoryboard(name: "Welcome", bundle: nil)
+        let vc = sb.instantiateInitialViewController()
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
         
         return true
     }
