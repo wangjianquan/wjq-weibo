@@ -132,9 +132,10 @@ class NewfeatureCell : UICollectionViewCell{
     
     }
     
+    //MARK: -- 进入微博
     @objc private func startBtnClick(){
     
-        Dlog("开始按钮")
+        NotificationCenter.default.post(name: Notification.Name(rawValue: SwitchRootViewController), object: true)
     }
    
 }

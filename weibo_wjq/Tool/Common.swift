@@ -15,6 +15,7 @@ let WB_App_Secret = "cc23ae6e7f115b52c6c944a0d81057c0"
 /// OAuth授权需要的重定向地址
 let WB_Redirect_uri = "http://www.baidu.com"
 
+let accossToken = "2.00S2yPcC0yV8dDddc8ac5f76xEIoDC"
 
 
 
@@ -23,3 +24,8 @@ let WB_Redirect_uri = "http://www.baidu.com"
 let XMGPresentationManagerDidPresented = "XMGPresentationManagerDidPresented"
 /// 自定义转场消失
 let XMGPresentationManagerDidDismissed = "XMGPresentationManagerDismissed"
+
+
+// 跳转viewController
+let SwitchRootViewController = "SwitchRootViewController"
+

@@ -40,7 +40,9 @@ class WelcomeViewController: UIViewController {
         UIView.animate(withDuration: 2.0, animations: { () -> Void in
             self.nameLabel.alpha = 1.0
         }, completion: { (_) -> Void in
-            Dlog("")
+
+            //动画结束,进入欢迎界面
+             NotificationCenter.default.post(name: Notification.Name(rawValue: SwitchRootViewController), object: true)
         })
         }
     

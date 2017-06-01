@@ -29,7 +29,7 @@ class UserAccount: NSObject,NSCoding {
     
     
     // MARK: - 生命周期方法
-    init(dict: [String : AnyObject]) {
+    init(dict: [String : Any]) {
         super.init()
         self.setValuesForKeys(dict)
     }
@@ -103,20 +103,23 @@ class UserAccount: NSObject,NSCoding {
         //1.  断定access_token一定是不等于nil的, 如果运行的时access_token等于nil, 那么程序就会崩溃, 并且报错
         assert(access_token != nil, "使用该方法必须先授权")
         
-        //2.请求地址
-        let urlString = "https://api.weibo.com/2/users/show.json"
+        //2.请求地址https://api.weibo.com/
+        let urlString = "2/users/show.json"
         //3.参数
         let dict = ["access_token" : access_token!, "uid" : uid!]
         
-       //4.    GET
-        NetworkTools.shareInstance.request(requestType: .GET, urlString: urlString, parameters: dict as [String : AnyObject]){ (objc) in
+        
+        NetworkTools.shareInstance.request(.GET, url: urlString, parameters: dict  as [String : Any]) { (result, error) in
             
-            let dic = objc as! [String : AnyObject]
+            //可选型的安全校验
+            guard let result = result else {return}
             
+            let dic = result 
             //1.取出用户信息
             self.avatar_large = dic["avatar_large"] as? String
             self.screen_name  = dic["screen_name"] as? String
             finished(self)
+
         }
 
     }

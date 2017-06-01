@@ -40,6 +40,9 @@ class OAuthViewController: UIViewController {
 
     }
   
+    @IBAction func closeController() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 //MARK: -- UIWebViewDelegate
@@ -93,20 +96,25 @@ extension OAuthViewController: UIWebViewDelegate{
     fileprivate  func loadAccessToken(codeStr: String?) {
     
         guard let code = codeStr  else { return  }
-    
-        let url = "https://api.weibo.com/oauth2/access_token"
+    //https://api.weibo.com/
+        let url = "oauth2/access_token"
         
         let dic = ["client_id": WB_App_Key, "client_secret": WB_App_Secret, "grant_type": "authorization_code", "code": code, "redirect_uri": WB_Redirect_uri]
-        NetworkTools.shareInstance.request(requestType: .POST, urlString: url, parameters: dic as [String : AnyObject] ) { (json) in
-           
+        NetworkTools.shareInstance.request(.POST, url: url, parameters: dic as [String : Any] ) { (json, error) in
+
             // 1.将授权信息转换为模型
-            let account = UserAccount(dict:
-                json as! [String : AnyObject])
+            let account = UserAccount(dict: json!)
             
             //2. 获取用户信息
             account.loadUserInfo({ (account) in
                 //3. 闭包回调, 保存信息
                _ =  account?.saveAccount()
+               
+                self.closeController()
+                
+                NotificationCenter.default.post(name: Notification.Name(rawValue:SwitchRootViewController), object: false)
+                
+                
             })
            
             Dlog(json as Any)

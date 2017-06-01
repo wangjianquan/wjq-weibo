@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import SVProgressHUD
+
+
 
 class HomeViewController: BaseViewController {
 
@@ -16,20 +19,79 @@ class HomeViewController: BaseViewController {
     
     fileprivate lazy var popAnimation : PopAnimation = PopAnimation()
     
+    fileprivate  lazy var homeTableView: UITableView = {
+        let tempTableView = UITableView()
+        tempTableView.delegate = self
+        tempTableView.dataSource = self
+
+        
+        tempTableView.register(UINib.init(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: "cell")
+        tempTableView.rowHeight = UITableViewAutomaticDimension
+        tempTableView.estimatedRowHeight = 200
+        return tempTableView
+    }()
+
+    
+    /// 保存所有微博数据
+   fileprivate var dataSource: [Status]?
+    {
+        didSet{
+            homeTableView.reloadData()
+        }
+    }
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //没有登录时
-      
         if !isLogin {
             visitorView.addRotationAnim()
             return
         }
         //导航栏设置
         setupNavigationBar()
+        
+        
+        
+        view.addSubview(homeTableView)
+        homeTableView.snp.makeConstraints { (make) in
+            make.edges.equalTo(0)
+        }
+        loadData()
     }
 
     
     
+}
+
+//MARK: -- 代理方法
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataSource?.count ?? 0
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeCell
+
+        
+        cell.status = dataSource?[indexPath.row]
+        return cell
+        
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+}
+
+extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
 }
 
 //MARK: -- 设置UI
@@ -50,6 +112,41 @@ extension HomeViewController {
         
         navigationItem.titleView = titleBtn
 
+    }
+
+}
+
+//MAKR: -- 网络请求
+extension HomeViewController {
+
+    fileprivate func loadData() {
+    
+        NetworkTools.shareInstance.loadStatus { (result, error) in
+                // 1.安全校验
+                if error != nil
+                {
+                    SVProgressHUD.showError(withStatus: "获取微博数据失败")
+                    return
+                }
+                guard let arr = result else {
+                    return
+                }
+            
+                // 2.将字典数组转换为模型数组
+                var dataArray = [Status]()
+                for dict in arr
+                {
+                    let status = Status(dict: dict)
+                    dataArray.append(status)
+                }
+            
+            self.dataSource = dataArray
+            
+                Dlog("\(dataArray),\(dataArray.count)")
+        }
+    
+    
+    
     }
 
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C19C5721EDFEDD100C04AA8 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C5711EDFEDD100C04AA8 /* Status.swift */; };
+		7C19C5741EE0138800C04AA8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C5731EE0138800C04AA8 /* User.swift */; };
+		7C19C5771EE030B800C04AA8 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C5751EE030B800C04AA8 /* HomeCell.swift */; };
+		7C19C5781EE030B800C04AA8 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C19C5761EE030B800C04AA8 /* HomeCell.xib */; };
 		7C39575C1ED67B1300CB28A7 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39575B1ED67B1300CB28A7 /* PopViewController.swift */; };
 		7C39575E1ED681BF00CB28A7 /* WjPresentationCoutro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39575D1ED681BF00CB28A7 /* WjPresentationCoutro.swift */; };
 		7C3957601ED6C11C00CB28A7 /* PopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39575F1ED6C11C00CB28A7 /* PopAnimation.swift */; };
@@ -49,6 +53,10 @@
 
 /* Begin PBXFileReference section */
 		567240FA065C5924DC6BCF50 /* Pods-weibo_wjq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo_wjq.release.xcconfig"; path = "Pods/Target Support Files/Pods-weibo_wjq/Pods-weibo_wjq.release.xcconfig"; sourceTree = "<group>"; };
+		7C19C5711EDFEDD100C04AA8 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		7C19C5731EE0138800C04AA8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7C19C5751EE030B800C04AA8 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		7C19C5761EE030B800C04AA8 /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		7C39575B1ED67B1300CB28A7 /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
 		7C39575D1ED681BF00CB28A7 /* WjPresentationCoutro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WjPresentationCoutro.swift; sourceTree = "<group>"; };
 		7C39575F1ED6C11C00CB28A7 /* PopAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimation.swift; sourceTree = "<group>"; };
@@ -119,6 +127,31 @@
 				D07C515DBA441A9ECC4CE957 /* Pods_weibo_wjq.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C19C56E1EDFED2800C04AA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7C19C5711EDFEDD100C04AA8 /* Status.swift */,
+				7C19C5731EE0138800C04AA8 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7C19C56F1EDFED5F00C04AA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C19C5751EE030B800C04AA8 /* HomeCell.swift */,
+				7C19C5761EE030B800C04AA8 /* HomeCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7C19C5701EDFED8B00C04AA8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		7C3957691ED810D700CB28A7 /* QRCode */ = {
@@ -203,6 +236,9 @@
 		7C643F681ECAF39C00625748 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7C19C5701EDFED8B00C04AA8 /* Controllers */,
+				7C19C56F1EDFED5F00C04AA8 /* View */,
+				7C19C56E1EDFED2800C04AA8 /* Model */,
 				7C3957691ED810D700CB28A7 /* QRCode */,
 				7C643F791ECEA33200625748 /* Home.storyboard */,
 				7C643F6E1ECAF4DB00625748 /* HomeViewController.swift */,
@@ -348,6 +384,7 @@
 				7C643F5D1ECAE44C00625748 /* Assets.xcassets in Resources */,
 				7C643F7D1ECEA36C00625748 /* Message.storyboard in Resources */,
 				7C643F5B1ECAE44C00625748 /* Main.storyboard in Resources */,
+				7C19C5781EE030B800C04AA8 /* HomeCell.xib in Resources */,
 				7C3957781EDB019300CB28A7 /* OAuth.storyboard in Resources */,
 				7C3C58E51EDBF2550074624D /* Welcome.storyboard in Resources */,
 				7C643F871ED2D05600625748 /* More.storyboard in Resources */,
@@ -419,14 +456,17 @@
 				7C643F781ECAF8EB00625748 /* MainViewController.swift in Sources */,
 				7C643F561ECAE44C00625748 /* AppDelegate.swift in Sources */,
 				7C3C58E01EDB98610074624D /* String + Extension.swift in Sources */,
+				7C19C5741EE0138800C04AA8 /* User.swift in Sources */,
 				7C643F731ECAF50200625748 /* DiscoverViewController.swift in Sources */,
 				7C3957751EDAEF2700CB28A7 /* OAuthViewController.swift in Sources */,
+				7C19C5771EE030B800C04AA8 /* HomeCell.swift in Sources */,
 				7C3C58DE1EDB31CA0074624D /* UserAccount.swift in Sources */,
 				7C643FAA1ED53A9B00625748 /* UIButton+Extension.swift in Sources */,
 				7C643FAC1ED53D1400625748 /* TitleButton.swift in Sources */,
 				7C643F751ECAF51100625748 /* ProfileViewController.swift in Sources */,
 				7C643F6F1ECAF4DB00625748 /* HomeViewController.swift in Sources */,
 				7C643FA91ED53A9B00625748 /* UIBarButtonItem+ Extension.swift in Sources */,
+				7C19C5721EDFEDD100C04AA8 /* Status.swift in Sources */,
 				7C3957711EDABF9900CB28A7 /* QRCodeCreateViewController.swift in Sources */,
 				7C3C58EB1EDC09190074624D /* NewfeatureViewController.swift in Sources */,
 				7C39575C1ED67B1300CB28A7 /* PopViewController.swift in Sources */,

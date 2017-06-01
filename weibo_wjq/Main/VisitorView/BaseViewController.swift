@@ -21,9 +21,14 @@ class BaseViewController: UIViewController {
         isLogin ? super.loadView() : setupVisitorView()
     }
     
+   
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+
+        
+         }
     
    
     
