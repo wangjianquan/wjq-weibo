@@ -33,7 +33,7 @@ class HomeViewController: BaseViewController {
 
     
     /// 保存所有微博数据
-   fileprivate var dataSource: [Status]?
+   fileprivate var dataSource: [StatusViewModel]?
     {
         didSet{
             homeTableView.reloadData()
@@ -77,7 +77,7 @@ extension HomeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeCell
 
         
-        cell.status = dataSource?[indexPath.row]
+        cell.viewModel = dataSource?[indexPath.row]
         return cell
         
     }
@@ -133,14 +133,15 @@ extension HomeViewController {
                 }
             
                 // 2.将字典数组转换为模型数组
-                var dataArray = [Status]()
+                var dataArray = [StatusViewModel]()
                 for dict in arr
                 {
                     let status = Status(dict: dict)
-                    dataArray.append(status)
+                    let viewModel = StatusViewModel(status: status)
+                    dataArray.append(viewModel)
                 }
-            
-            self.dataSource = dataArray
+           
+                self.dataSource = dataArray
             
                 Dlog("\(dataArray),\(dataArray.count)")
         }

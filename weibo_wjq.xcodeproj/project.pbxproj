@@ -11,6 +11,8 @@
 		7C19C5741EE0138800C04AA8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C5731EE0138800C04AA8 /* User.swift */; };
 		7C19C5771EE030B800C04AA8 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C5751EE030B800C04AA8 /* HomeCell.swift */; };
 		7C19C5781EE030B800C04AA8 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C19C5761EE030B800C04AA8 /* HomeCell.xib */; };
+		7C19C57A1EE157E700C04AA8 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C5791EE157E700C04AA8 /* Date + Extension.swift */; };
+		7C19C57C1EE16B3800C04AA8 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C57B1EE16B3800C04AA8 /* StatusViewModel.swift */; };
 		7C39575C1ED67B1300CB28A7 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39575B1ED67B1300CB28A7 /* PopViewController.swift */; };
 		7C39575E1ED681BF00CB28A7 /* WjPresentationCoutro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39575D1ED681BF00CB28A7 /* WjPresentationCoutro.swift */; };
 		7C3957601ED6C11C00CB28A7 /* PopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39575F1ED6C11C00CB28A7 /* PopAnimation.swift */; };
@@ -57,6 +59,8 @@
 		7C19C5731EE0138800C04AA8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7C19C5751EE030B800C04AA8 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		7C19C5761EE030B800C04AA8 /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		7C19C5791EE157E700C04AA8 /* Date + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
+		7C19C57B1EE16B3800C04AA8 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		7C39575B1ED67B1300CB28A7 /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
 		7C39575D1ED681BF00CB28A7 /* WjPresentationCoutro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WjPresentationCoutro.swift; sourceTree = "<group>"; };
 		7C39575F1ED6C11C00CB28A7 /* PopAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimation.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				7C19C5711EDFEDD100C04AA8 /* Status.swift */,
+				7C19C57B1EE16B3800C04AA8 /* StatusViewModel.swift */,
 				7C19C5731EE0138800C04AA8 /* User.swift */,
 			);
 			path = Model;
@@ -302,6 +307,7 @@
 				7C643FA71ED53A9B00625748 /* UIBarButtonItem+ Extension.swift */,
 				7C643FA81ED53A9B00625748 /* UIButton+Extension.swift */,
 				7C3C58DF1EDB98610074624D /* String + Extension.swift */,
+				7C19C5791EE157E700C04AA8 /* Date + Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -443,7 +449,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -455,11 +461,13 @@
 			files = (
 				7C643F781ECAF8EB00625748 /* MainViewController.swift in Sources */,
 				7C643F561ECAE44C00625748 /* AppDelegate.swift in Sources */,
+				7C19C57A1EE157E700C04AA8 /* Date + Extension.swift in Sources */,
 				7C3C58E01EDB98610074624D /* String + Extension.swift in Sources */,
 				7C19C5741EE0138800C04AA8 /* User.swift in Sources */,
 				7C643F731ECAF50200625748 /* DiscoverViewController.swift in Sources */,
 				7C3957751EDAEF2700CB28A7 /* OAuthViewController.swift in Sources */,
 				7C19C5771EE030B800C04AA8 /* HomeCell.swift in Sources */,
+				7C19C57C1EE16B3800C04AA8 /* StatusViewModel.swift in Sources */,
 				7C3C58DE1EDB31CA0074624D /* UserAccount.swift in Sources */,
 				7C643FAA1ED53A9B00625748 /* UIButton+Extension.swift in Sources */,
 				7C643FAC1ED53D1400625748 /* TitleButton.swift in Sources */,

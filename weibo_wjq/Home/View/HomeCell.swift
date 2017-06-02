@@ -25,62 +25,41 @@ class HomeCell: UITableViewCell {
     /// 正文
     @IBOutlet weak var contentLabel: UILabel!
     
-    var  status : Status?
+    var  viewModel : StatusViewModel?
     {
         didSet {
             //头像
-            if let url = URL(string: (status?.user?.profile_image_url)!) {
-                 iconImageView.sd_setImage(with: url)
-                iconImageView.layer.cornerRadius = 30
-                iconImageView.layer.masksToBounds = true
-            }
+            iconImageView.layer.cornerRadius = 30
+            iconImageView.layer.masksToBounds = true
+            iconImageView.sd_setImage(with: viewModel?.icon_URL)
             
             //认证图标
-            /// 用户认证类型 -1：没有认证，0，认证用户，2,3,5: 企业认证，220: 达人
-            
-            if let type = status?.user?.verified_type {
-                
-                var name = ""
-                switch type
-                {
-                case 0:
-                    name = "avatar_vip"
-                case 2, 3, 5:
-                    name = "avatar_enterprise_vip"
-                case 220:
-                    name = "avatar_grassroot"
-                default:
-                    name = ""
-                }
-                verifiedImageView.image = UIImage(named: name)
-            }
+           verifiedImageView.image = viewModel?.verified_image
             
             //会员图标
             /// 会员等级 ,取值范围 1~6
-            if let rank = status?.user?.mbrank {
-                
-                if rank >= 1 && rank <= 6 {
-                    vipImageView.image = UIImage(named: "common_icon_membership_level\(rank)")
-                    nameLabel.textColor = UIColor.orange
+            vipImageView.image = nil
+            nameLabel.textColor = UIColor.black
+            if let vip = viewModel?.mbrankImage {
+                vipImageView.image = vip
+                nameLabel.textColor = UIColor.orange
 
-                } else {
-                    vipImageView.image = nil
-                    nameLabel.textColor = UIColor.black
-                }
-                
             }
             
             //昵称
-            nameLabel.text = status?.user?.screen_name
+            if let nameStr = viewModel?.status.user?.screen_name {
+                nameLabel.text = nameStr
+            }
             
             //时间
-            timeLabel.text = status?.created_at
+            timeLabel.text = viewModel?.created_Time
             
-            //来源
-            sourceLabel.text = status?.source
             
+            //微博来源
+            sourceLabel.text = viewModel?.source_Text
+           
             //内容
-            contentLabel.text = status?.text
+            contentLabel.text = viewModel?.status.text
            
             
         }
