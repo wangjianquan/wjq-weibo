@@ -13,6 +13,8 @@
 		7C19C5781EE030B800C04AA8 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C19C5761EE030B800C04AA8 /* HomeCell.xib */; };
 		7C19C57A1EE157E700C04AA8 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C5791EE157E700C04AA8 /* Date + Extension.swift */; };
 		7C19C57C1EE16B3800C04AA8 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C57B1EE16B3800C04AA8 /* StatusViewModel.swift */; };
+		7C19C57F1EE3A0B800C04AA8 /* PicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C57D1EE3A0B800C04AA8 /* PicCollectionViewCell.swift */; };
+		7C19C5801EE3A0B800C04AA8 /* PicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C19C57E1EE3A0B800C04AA8 /* PicCollectionViewCell.xib */; };
 		7C39575C1ED67B1300CB28A7 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39575B1ED67B1300CB28A7 /* PopViewController.swift */; };
 		7C39575E1ED681BF00CB28A7 /* WjPresentationCoutro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39575D1ED681BF00CB28A7 /* WjPresentationCoutro.swift */; };
 		7C3957601ED6C11C00CB28A7 /* PopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39575F1ED6C11C00CB28A7 /* PopAnimation.swift */; };
@@ -61,6 +63,8 @@
 		7C19C5761EE030B800C04AA8 /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		7C19C5791EE157E700C04AA8 /* Date + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
 		7C19C57B1EE16B3800C04AA8 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
+		7C19C57D1EE3A0B800C04AA8 /* PicCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCollectionViewCell.swift; sourceTree = "<group>"; };
+		7C19C57E1EE3A0B800C04AA8 /* PicCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicCollectionViewCell.xib; sourceTree = "<group>"; };
 		7C39575B1ED67B1300CB28A7 /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
 		7C39575D1ED681BF00CB28A7 /* WjPresentationCoutro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WjPresentationCoutro.swift; sourceTree = "<group>"; };
 		7C39575F1ED6C11C00CB28A7 /* PopAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimation.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 			children = (
 				7C19C5751EE030B800C04AA8 /* HomeCell.swift */,
 				7C19C5761EE030B800C04AA8 /* HomeCell.xib */,
+				7C19C57D1EE3A0B800C04AA8 /* PicCollectionViewCell.swift */,
+				7C19C57E1EE3A0B800C04AA8 /* PicCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 				7C643F821ECEA3AD00625748 /* Profile.storyboard in Resources */,
 				7C3C58ED1EDC09280074624D /* Newfeature.storyboard in Resources */,
 				7C3957641ED6C9E000CB28A7 /* PopViewController.storyboard in Resources */,
+				7C19C5801EE3A0B800C04AA8 /* PicCollectionViewCell.xib in Resources */,
 				7C643F801ECEA39300625748 /* Discover.storyboard in Resources */,
 				7C643F9E1ED4221500625748 /* VisitorView.xib in Resources */,
 			);
@@ -480,6 +487,7 @@
 				7C39575C1ED67B1300CB28A7 /* PopViewController.swift in Sources */,
 				7C3C58E31EDBF23F0074624D /* WelcomeViewController.swift in Sources */,
 				7C39576D1ED8111700CB28A7 /* QRCodeViewController.swift in Sources */,
+				7C19C57F1EE3A0B800C04AA8 /* PicCollectionViewCell.swift in Sources */,
 				7C39575E1ED681BF00CB28A7 /* WjPresentationCoutro.swift in Sources */,
 				7C3957601ED6C11C00CB28A7 /* PopAnimation.swift in Sources */,
 				7C39577A1EDB0DF000CB28A7 /* NetworkTools.swift in Sources */,

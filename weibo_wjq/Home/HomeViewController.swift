@@ -8,14 +8,21 @@
 
 import UIKit
 import SVProgressHUD
-
+import SDWebImage
 
 
 class HomeViewController: BaseViewController {
 
     //MARK: -- 懒加载
+    // 标题按钮
+    fileprivate lazy var titleBtn : TitleButton = {
+        let titleBtn = TitleButton()
+        let title = UserAccount.loadAccount()?.screen_name
+        titleBtn.setTitle(title, for: .normal)
+        titleBtn.addTarget(self, action: #selector(HomeViewController.titleBtnClick(btn:)), for: .touchUpInside)
+        return titleBtn
+    }()
     
-    fileprivate lazy var titleBtn : TitleButton = TitleButton()
     
     fileprivate lazy var popAnimation : PopAnimation = PopAnimation()
     
@@ -23,11 +30,11 @@ class HomeViewController: BaseViewController {
         let tempTableView = UITableView()
         tempTableView.delegate = self
         tempTableView.dataSource = self
-
-        
+        tempTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         tempTableView.register(UINib.init(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: "cell")
-        tempTableView.rowHeight = UITableViewAutomaticDimension
-        tempTableView.estimatedRowHeight = 200
+        
+        //预设值cell高度
+        tempTableView.estimatedRowHeight = 400
         return tempTableView
     }()
 
@@ -40,6 +47,8 @@ class HomeViewController: BaseViewController {
         }
     }
 
+    /// 缓存行高
+    fileprivate var rowHeightCaches = [String : CGFloat]()
     
     
     override func viewDidLoad() {
@@ -61,7 +70,11 @@ class HomeViewController: BaseViewController {
         loadData()
     }
 
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // 释放缓存数据
+        rowHeightCaches.removeAll()
+    }
     
 }
 
@@ -90,7 +103,24 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+
+        let viewModel = dataSource![indexPath.row]
+         // 1.从缓存中取行高
+        guard let height = rowHeightCaches[viewModel.status.idstr ?? "-1" ] else {
+           
+            //缓存中没有,计算高度
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! HomeCell
+            //缓存行高
+            let temp = cell.calculateRowHeight(viewModel)
+            
+            rowHeightCaches[viewModel.status.idstr ?? "-1"] = temp
+            
+            
+            return temp
+        }
+        
+        return height
+        
     }
 }
 
@@ -103,13 +133,7 @@ extension HomeViewController {
        //右侧按钮
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action:#selector(HomeViewController.rightBarButtonItemClick))
 
-       
-
-    //MARK: -- 2. 标题按钮
-       let title = UserAccount.loadAccount()?.screen_name
-        titleBtn.setTitle(title, for: .normal)
-        titleBtn.addTarget(self, action: #selector(HomeViewController.titleBtnClick(btn:)), for: .touchUpInside)
-        
+    //MARK: -- 2. 标题按钮 (闭包)
         navigationItem.titleView = titleBtn
 
     }
@@ -119,6 +143,7 @@ extension HomeViewController {
 //MAKR: -- 网络请求
 extension HomeViewController {
 
+    //MARK: --  loadData 网络请求
     fileprivate func loadData() {
     
         NetworkTools.shareInstance.loadStatus { (result, error) in
@@ -141,15 +166,49 @@ extension HomeViewController {
                     dataArray.append(viewModel)
                 }
            
-                self.dataSource = dataArray
             
-                Dlog("\(dataArray),\(dataArray.count)")
+                //缓存图片 先下载后刷新
+                self.cachesImage(dataArr: dataArray)
         }
-    
     
     
     }
 
+    //MARK: --  cachesImage 缓存图片
+    fileprivate func cachesImage(dataArr: [StatusViewModel]) {
+    
+        let group = DispatchGroup()
+        
+        //遍历数组,取model
+        for viewModel in dataArr {
+            
+            //1. 从模型中取出配图URL数组
+//            guard  let picUrlArr = viewModel.thumbnail_pic else {
+//                continue
+//            }
+            
+            //2. 从配图数组(pic_urls)中取出图片
+            for url in viewModel.thumbnail_pic
+            {
+                // 将当前的下载操作添加到组中
+                group.enter()
+                
+                SDWebImageManager.shared().downloadImage(with: url, options: [], progress: nil, completed: { (image, error, _, _, _) in
+                        Dlog("图片下载完成")
+                    // 将当前下载操作从组中移除
+                    group.leave()
+                })
+            }
+        }
+        
+        //监听下载操作, 当全部下载完后刷新表单
+        // 监听下载 操作
+        group.notify(queue: DispatchQueue.main) { () -> Void in
+            Dlog("全部下载完成")
+            self.dataSource = dataArr //刷新表单
+        }
+        
+    }
 }
 
 //MARK: -- 点击事件
@@ -182,9 +241,6 @@ extension HomeViewController{
         guard  let qrcodeView = QRCodeVC.instantiateInitialViewController() else { return
         }
         present(qrcodeView, animated: true, completion: nil)
-        
-    
-    
     }
 }
 

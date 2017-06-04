@@ -28,6 +28,9 @@ class StatusViewModel: NSObject {
     /// 微博格式化之后的来源
     var source_Text: String = ""
     
+    /// 保存所有配图URL
+    var thumbnail_pic: [URL] = [URL]()
+    
     init(status : Status) {
       
         self.status = status
@@ -80,6 +83,30 @@ class StatusViewModel: NSObject {
             source_Text = fromStr + " " + (sourceStr as NSString).substring(with: NSRange(location: startIndex, length: length))
         }
 
+        
+        /// 保存所有配图URL
+        //2. 从模型中取出配图数组
+        //如果status.pic_urls?.count != 0 说明是原创微博,等于0则为转发的微博
+        let picArr = status.pic_urls?.count != 0 ? status.pic_urls : status.retweeted_status?.pic_urls
+        
+        if let picArray = picArr
+        {
+            thumbnail_pic = [URL]()
+            //3. 从配图数组(pic_urls)中取出图片
+            for dic in picArray
+            {
+                //图片链接
+                guard let picUrl = dic["thumbnail_pic"] as? String else {
+                    continue
+                }
+                // 2.2根据字符串创建URL
+                let url = URL(string: picUrl)
+                thumbnail_pic.append(url!)
+                // 将遍历的图片地址添加到URL类型的数组中
+            }
+        }
+        
+        
         
     }
     
