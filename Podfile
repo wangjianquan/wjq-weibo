@@ -8,7 +8,7 @@ pod 'AFNetworking', '~> 3.1.0'
 pod 'SDWebImage'
 pod 'SnapKit'  
 pod 'SVProgressHUD'
-
+pod 'MJRefresh'
 
 # Pods for weibo_wjq
 

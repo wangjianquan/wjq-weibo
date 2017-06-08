@@ -82,7 +82,11 @@ extension MainViewController{
     //如果swift中将函数声明成private,那么该函数不会被添加到方法列表中
     //既要保证不被外界随便访问,又要使之有效, 则在private前加@objc, 此时可以再方法列表中查找到该方法
   @objc  func composeBtnClick() {
-        print("发布按钮被点击")
+    
+    let composeVc = ComposeViewContro()
+    let composeNavi = UINavigationController.init(rootViewController: composeVc)
+    present(composeNavi, animated: true, completion: nil)
+    
     }
 
 }

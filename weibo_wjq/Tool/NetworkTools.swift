@@ -77,11 +77,13 @@ extension NetworkTools {
 extension NetworkTools {
 
     
-    func loadStatus(_ finished: @escaping (_ result: [[String:Any]]?, _ error: Error?) -> ())  {
+    func loadStatus(since_id : Int, max_id : Int, _ finished: @escaping (_ result: [[String:Any]]?, _ error: Error?) -> ())  {
         
         assert(UserAccount.loadAccount() != nil, "必须授权之后才能获取微博数据")
         let url = "2/statuses/home_timeline.json"
-        let dict = ["access_token": UserAccount.loadAccount()!.access_token!]
+        let access_token = UserAccount.loadAccount()!.access_token!
+        
+        let dict = ["access_token" : access_token, "since_id" : "\(since_id)", "max_id" : "\(max_id)"]
              
         request(.GET, url: url, parameters: dict) { (result, error) in
             

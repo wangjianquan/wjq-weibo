@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C08FC421EE7ABF100C881AF /* ComposeViewContro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C08FC401EE7ABF100C881AF /* ComposeViewContro.swift */; };
+		7C08FC431EE7ABF100C881AF /* ComposeViewContro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C08FC411EE7ABF100C881AF /* ComposeViewContro.xib */; };
+		7C08FC451EE7D99A00C881AF /* PicPickerViewContro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C08FC441EE7D99A00C881AF /* PicPickerViewContro.swift */; };
+		7C08FC481EE7D9C700C881AF /* PicPickerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C08FC461EE7D9C700C881AF /* PicPickerCollectionCell.swift */; };
+		7C08FC491EE7D9C700C881AF /* PicPickerCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C08FC471EE7D9C700C881AF /* PicPickerCollectionCell.xib */; };
 		7C19C5721EDFEDD100C04AA8 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C5711EDFEDD100C04AA8 /* Status.swift */; };
 		7C19C5741EE0138800C04AA8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C5731EE0138800C04AA8 /* User.swift */; };
 		7C19C5771EE030B800C04AA8 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C5751EE030B800C04AA8 /* HomeCell.swift */; };
@@ -15,6 +20,8 @@
 		7C19C57C1EE16B3800C04AA8 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C57B1EE16B3800C04AA8 /* StatusViewModel.swift */; };
 		7C19C57F1EE3A0B800C04AA8 /* PicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C57D1EE3A0B800C04AA8 /* PicCollectionViewCell.swift */; };
 		7C19C5801EE3A0B800C04AA8 /* PicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C19C57E1EE3A0B800C04AA8 /* PicCollectionViewCell.xib */; };
+		7C19C5871EE6B64600C04AA8 /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C5861EE6B64600C04AA8 /* ComposeTextView.swift */; };
+		7C19C5891EE6B6BA00C04AA8 /* ComposeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19C5881EE6B6BA00C04AA8 /* ComposeTitleView.swift */; };
 		7C39575C1ED67B1300CB28A7 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39575B1ED67B1300CB28A7 /* PopViewController.swift */; };
 		7C39575E1ED681BF00CB28A7 /* WjPresentationCoutro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39575D1ED681BF00CB28A7 /* WjPresentationCoutro.swift */; };
 		7C3957601ED6C11C00CB28A7 /* PopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39575F1ED6C11C00CB28A7 /* PopAnimation.swift */; };
@@ -57,6 +64,11 @@
 
 /* Begin PBXFileReference section */
 		567240FA065C5924DC6BCF50 /* Pods-weibo_wjq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo_wjq.release.xcconfig"; path = "Pods/Target Support Files/Pods-weibo_wjq/Pods-weibo_wjq.release.xcconfig"; sourceTree = "<group>"; };
+		7C08FC401EE7ABF100C881AF /* ComposeViewContro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewContro.swift; sourceTree = "<group>"; };
+		7C08FC411EE7ABF100C881AF /* ComposeViewContro.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewContro.xib; sourceTree = "<group>"; };
+		7C08FC441EE7D99A00C881AF /* PicPickerViewContro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerViewContro.swift; sourceTree = "<group>"; };
+		7C08FC461EE7D9C700C881AF /* PicPickerCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionCell.swift; sourceTree = "<group>"; };
+		7C08FC471EE7D9C700C881AF /* PicPickerCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicPickerCollectionCell.xib; sourceTree = "<group>"; };
 		7C19C5711EDFEDD100C04AA8 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		7C19C5731EE0138800C04AA8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7C19C5751EE030B800C04AA8 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
@@ -65,6 +77,8 @@
 		7C19C57B1EE16B3800C04AA8 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		7C19C57D1EE3A0B800C04AA8 /* PicCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCollectionViewCell.swift; sourceTree = "<group>"; };
 		7C19C57E1EE3A0B800C04AA8 /* PicCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicCollectionViewCell.xib; sourceTree = "<group>"; };
+		7C19C5861EE6B64600C04AA8 /* ComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
+		7C19C5881EE6B6BA00C04AA8 /* ComposeTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTitleView.swift; sourceTree = "<group>"; };
 		7C39575B1ED67B1300CB28A7 /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
 		7C39575D1ED681BF00CB28A7 /* WjPresentationCoutro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WjPresentationCoutro.swift; sourceTree = "<group>"; };
 		7C39575F1ED6C11C00CB28A7 /* PopAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimation.swift; sourceTree = "<group>"; };
@@ -165,6 +179,28 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		7C19C5811EE6B07400C04AA8 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				7C19C58A1EE6C8D400C04AA8 /* PicPicker */,
+				7C08FC401EE7ABF100C881AF /* ComposeViewContro.swift */,
+				7C08FC411EE7ABF100C881AF /* ComposeViewContro.xib */,
+				7C19C5861EE6B64600C04AA8 /* ComposeTextView.swift */,
+				7C19C5881EE6B6BA00C04AA8 /* ComposeTitleView.swift */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		7C19C58A1EE6C8D400C04AA8 /* PicPicker */ = {
+			isa = PBXGroup;
+			children = (
+				7C08FC441EE7D99A00C881AF /* PicPickerViewContro.swift */,
+				7C08FC461EE7D9C700C881AF /* PicPickerCollectionCell.swift */,
+				7C08FC471EE7D9C700C881AF /* PicPickerCollectionCell.xib */,
+			);
+			path = PicPicker;
+			sourceTree = "<group>";
+		};
 		7C3957691ED810D700CB28A7 /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +253,7 @@
 		7C643F541ECAE44C00625748 /* weibo_wjq */ = {
 			isa = PBXGroup;
 			children = (
+				7C19C5811EE6B07400C04AA8 /* Compose */,
 				7C3C58E11EDBF1D00074624D /* Newfeature */,
 				7C3957721EDAEEE200CB28A7 /* OAuth */,
 				7C643F761ECAF7A900625748 /* Tool */,
@@ -400,12 +437,14 @@
 				7C3957781EDB019300CB28A7 /* OAuth.storyboard in Resources */,
 				7C3C58E51EDBF2550074624D /* Welcome.storyboard in Resources */,
 				7C643F871ED2D05600625748 /* More.storyboard in Resources */,
+				7C08FC491EE7D9C700C881AF /* PicPickerCollectionCell.xib in Resources */,
 				7C39576F1ED814AB00CB28A7 /* QRCode.storyboard in Resources */,
 				7C643F7B1ECEA33200625748 /* Home.storyboard in Resources */,
 				7C643F821ECEA3AD00625748 /* Profile.storyboard in Resources */,
 				7C3C58ED1EDC09280074624D /* Newfeature.storyboard in Resources */,
 				7C3957641ED6C9E000CB28A7 /* PopViewController.storyboard in Resources */,
 				7C19C5801EE3A0B800C04AA8 /* PicCollectionViewCell.xib in Resources */,
+				7C08FC431EE7ABF100C881AF /* ComposeViewContro.xib in Resources */,
 				7C643F801ECEA39300625748 /* Discover.storyboard in Resources */,
 				7C643F9E1ED4221500625748 /* VisitorView.xib in Resources */,
 			);
@@ -470,6 +509,7 @@
 				7C643F561ECAE44C00625748 /* AppDelegate.swift in Sources */,
 				7C19C57A1EE157E700C04AA8 /* Date + Extension.swift in Sources */,
 				7C3C58E01EDB98610074624D /* String + Extension.swift in Sources */,
+				7C19C5891EE6B6BA00C04AA8 /* ComposeTitleView.swift in Sources */,
 				7C19C5741EE0138800C04AA8 /* User.swift in Sources */,
 				7C643F731ECAF50200625748 /* DiscoverViewController.swift in Sources */,
 				7C3957751EDAEF2700CB28A7 /* OAuthViewController.swift in Sources */,
@@ -479,6 +519,7 @@
 				7C643FAA1ED53A9B00625748 /* UIButton+Extension.swift in Sources */,
 				7C643FAC1ED53D1400625748 /* TitleButton.swift in Sources */,
 				7C643F751ECAF51100625748 /* ProfileViewController.swift in Sources */,
+				7C08FC481EE7D9C700C881AF /* PicPickerCollectionCell.swift in Sources */,
 				7C643F6F1ECAF4DB00625748 /* HomeViewController.swift in Sources */,
 				7C643FA91ED53A9B00625748 /* UIBarButtonItem+ Extension.swift in Sources */,
 				7C19C5721EDFEDD100C04AA8 /* Status.swift in Sources */,
@@ -486,11 +527,14 @@
 				7C3C58EB1EDC09190074624D /* NewfeatureViewController.swift in Sources */,
 				7C39575C1ED67B1300CB28A7 /* PopViewController.swift in Sources */,
 				7C3C58E31EDBF23F0074624D /* WelcomeViewController.swift in Sources */,
+				7C19C5871EE6B64600C04AA8 /* ComposeTextView.swift in Sources */,
 				7C39576D1ED8111700CB28A7 /* QRCodeViewController.swift in Sources */,
 				7C19C57F1EE3A0B800C04AA8 /* PicCollectionViewCell.swift in Sources */,
 				7C39575E1ED681BF00CB28A7 /* WjPresentationCoutro.swift in Sources */,
 				7C3957601ED6C11C00CB28A7 /* PopAnimation.swift in Sources */,
 				7C39577A1EDB0DF000CB28A7 /* NetworkTools.swift in Sources */,
+				7C08FC451EE7D99A00C881AF /* PicPickerViewContro.swift in Sources */,
+				7C08FC421EE7ABF100C881AF /* ComposeViewContro.swift in Sources */,
 				7C39577C1EDB1FDD00CB28A7 /* Common.swift in Sources */,
 				7C643F991ED41A0800625748 /* BaseViewController.swift in Sources */,
 				7C643F9A1ED41A0800625748 /* VisitorView.swift in Sources */,

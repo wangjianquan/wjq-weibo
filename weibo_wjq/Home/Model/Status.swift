@@ -12,6 +12,7 @@ class Status: NSObject {
     
     var created_at: String?  /// 微博创建时间
     var idstr: String?       /// 字符串型的微博ID
+    var mid: Int = 0       /// Int型的微博ID
     var source: String?       /// 微博来源
     var text: String?        /// 微博信息内容
     var user : User?        //微博作者用户信息
@@ -53,7 +54,7 @@ class Status: NSObject {
     }
     
     override var description: String{
-        let property = ["created_at","idstr","text","source"]
+        let property = ["created_at","idstr","text","source","mid","user"]
         let dict = dictionaryWithValues(forKeys: property)
         return "\(dict)"
     }
