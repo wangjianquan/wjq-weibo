@@ -213,3 +213,16 @@ extension HomeCell : UICollectionViewDataSource {
 
 
 }
+
+extension HomeCell : UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let userInfo = [showPhotoBrowserNotificationIndexPath : indexPath, showPhotoBrowserNotificationURLs : viewModel!.thumbnail_pic] as [String : Any]
+        
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: showPhotoBrowserNotification), object: self, userInfo: userInfo)
+    }
+    
+}
+

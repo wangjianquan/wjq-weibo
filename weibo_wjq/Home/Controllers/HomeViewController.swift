@@ -76,6 +76,10 @@ class HomeViewController: BaseViewController {
         //下拉刷新, 上拉加载
         setupHeaderView()
         setupFooterView()
+        
+        
+         NotificationCenter.default.addObserver(self, selector: Selector("showPhotoBrowser:"), name: NSNotification.Name(rawValue: showPhotoBrowserNotification), object: nil)
+        
 
     }
 
@@ -318,6 +322,25 @@ extension HomeViewController{
         }
         present(qrcodeView, animated: true, completion: nil)
     }
+    
+    
+    @objc fileprivate func showPhotoBrowser(_ note : Notification){
+    
+        
+        guard let picUrls = note.userInfo![showPhotoBrowserNotificationURLs] as? [URL], let indexPath = note.userInfo![showPhotoBrowserNotificationIndexPath] as?  IndexPath else {
+        return
+        }
+        
+        
+    
+        let photoBrowseVC = PhotoBrowseController(indexPath: indexPath, picUrls:picUrls)
+        
+        
+        
+        present(photoBrowseVC, animated: true, completion: nil)
+    
+    }
+    
 }
 
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SVProgressHUD
+
 
 class ComposeViewContro: UIViewController {
     
@@ -15,7 +17,10 @@ class ComposeViewContro: UIViewController {
     @IBOutlet var toolBar: UIToolbar!
     @IBOutlet var customTextView: ComposeTextView!
     
-   
+    fileprivate lazy var emoticonVc : EmotionViewController = EmotionViewController {[weak self] (emoticon) -> () in
+        self?.customTextView.insertEmoticon(emoticon)
+        self?.textViewDidChange((self?.customTextView)!)
+    }
     
 
     //MARK: -- 懒加载
@@ -60,7 +65,7 @@ class ComposeViewContro: UIViewController {
        sender.isSelected = !sender.isSelected
         customTextView.resignFirstResponder()
         
-        customTextView.inputView = customTextView.inputView != nil ? nil : UISwitch()
+        customTextView.inputView = customTextView.inputView != nil ? nil : emoticonVc.view
         
         customTextView.becomeFirstResponder()
         
@@ -137,9 +142,31 @@ extension ComposeViewContro {
         
     }
     
+    
+    //MARK: -- 发布微博
     @objc fileprivate func composeItemClick() {
+       
         customTextView.resignFirstResponder()
+        let statusString = customTextView.getEmoticonString()//微博正文
         
+        //回调成功与否闭包
+        let finishedCallBack = {(isSuccess: Bool) -> () in
+            if !isSuccess {
+                SVProgressHUD.showError(withStatus: "发送微博失败")
+                return
+            }
+            SVProgressHUD.showSuccess(withStatus: "发送微博成功")
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        
+        if let image = picPickerView.images.first {
+            //带图片
+            NetworkTools.shareInstance.sendStatus(statusString, image: image, isSuccess: finishedCallBack)
+        }else {
+            
+            NetworkTools.shareInstance.sendStatus(statusString, isSuccess: finishedCallBack)
+        }
     }
     
     //MARK: -- 监听键盘弹出

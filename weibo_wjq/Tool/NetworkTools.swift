@@ -75,8 +75,6 @@ extension NetworkTools {
 
 //MARK: - 请求首页数据
 extension NetworkTools {
-
-    
     func loadStatus(since_id : Int, max_id : Int, _ finished: @escaping (_ result: [[String:Any]]?, _ error: Error?) -> ())  {
         
         assert(UserAccount.loadAccount() != nil, "必须授权之后才能获取微博数据")
@@ -99,12 +97,68 @@ extension NetworkTools {
             } else {
                 print(error as Any)
             }
+        }
+    }
+}
 
+
+//MARK: - 发布微博
+extension NetworkTools {
+   
+    func sendStatus(_ statusString: String, isSuccess:@escaping (_ isSuccess: Bool) -> ()){
+        
+        assert(UserAccount.loadAccount() != nil, "必须授权之后才能获取微博数据")
+        let url = "2/statuses/update.json"
+        let access_token = UserAccount.loadAccount()!.access_token!
+        let dict = ["access_token" : access_token, "status" : statusString]
+        
+        request(.POST, url: url, parameters: dict)
+        { (result, error) in
             
+            if result != nil{
+                isSuccess(true)
+            }else {
+                isSuccess(false)
+            }
         }
         
     }
-    
+
 }
+
+// MARK:- 发送微博并且携带照片
+extension NetworkTools {
+    func sendStatus(_ statusText : String, image : UIImage, isSuccess : @escaping (_ isSuccess : Bool) -> ()) {
+        assert(UserAccount.loadAccount() != nil, "必须授权之后才能获取微博数据")
+        let url = "2/statuses/upload.json"
+        let access_token = UserAccount.loadAccount()!.access_token!
+        let dict = ["access_token" : access_token, "status" : statusText]
+       
+        
+        // 3.发送网络请求
+       post(url, parameters: dict, constructingBodyWith: { (formData) in
+
+        if let imageData = UIImageJPEGRepresentation(image, 0.5) {
+        
+            formData.appendPart(withFileData: imageData, name: "pic", fileName: "1.png", mimeType: "image/png")
+        
+        }
+       
+        
+       }, progress: nil, success: { (_, _) in
+            isSuccess(true)
+       }) { (_, error) in
+             Dlog(error)
+        }
+        
+      
+        
+    }
+}
+
+
+
+
+
 
 

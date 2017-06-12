@@ -29,3 +29,16 @@ let XMGPresentationManagerDidDismissed = "XMGPresentationManagerDismissed"
 // 跳转viewController
 let SwitchRootViewController = "SwitchRootViewController"
 
+
+
+
+
+// 通知常量
+let showPhotoBrowserNotification = "showPhotoBrowserNotification"
+let showPhotoBrowserNotificationURLs = "showPhotoBrowserNotificationURLs"
+let showPhotoBrowserNotificationIndexPath = "showPhotoBrowserNotificationIndexPath"
+
+
+
+
+
