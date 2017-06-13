@@ -63,6 +63,8 @@ class HomeViewController: BaseViewController {
     fileprivate var rowHeightCaches = [String : CGFloat]()
     
     
+    fileprivate var photoBrowerAnimator: PhotoBrowserAnimator = PhotoBrowserAnimator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //没有登录时
@@ -78,7 +80,7 @@ class HomeViewController: BaseViewController {
         setupFooterView()
         
         
-         NotificationCenter.default.addObserver(self, selector: Selector("showPhotoBrowser:"), name: NSNotification.Name(rawValue: showPhotoBrowserNotification), object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.showPhotoBrowser(_:)), name: NSNotification.Name(rawValue: showPhotoBrowserNotification), object: nil)
         
 
     }
@@ -327,17 +329,23 @@ extension HomeViewController{
     @objc fileprivate func showPhotoBrowser(_ note : Notification){
     
         
-        guard let picUrls = note.userInfo![showPhotoBrowserNotificationURLs] as? [URL], let indexPath = note.userInfo![showPhotoBrowserNotificationIndexPath] as?  IndexPath else {
+        guard let picUrls = note.userInfo![showPhotoBrowserNotificationURLs] as? [URL], let indexPath = note.userInfo![showPhotoBrowserNotificationIndexPath] as?  IndexPath, let objc = note.object as? AnimatorPresentDelegate else {
         return
         }
         
         
     
         let photoBrowseVC = PhotoBrowseController(indexPath: indexPath, picUrls:picUrls)
+        photoBrowseVC.modalPresentationStyle = .custom
+        photoBrowseVC.transitioningDelegate = photoBrowerAnimator
         
-        
+        photoBrowerAnimator.setIndexPath(indexPath, presentedDelegate: objc, dismissDelegate: photoBrowseVC)
         
         present(photoBrowseVC, animated: true, completion: nil)
+        
+        
+        
+
     
     }
     

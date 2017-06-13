@@ -43,8 +43,10 @@
 		7C47767F1EEE80AA002B8BC8 /* PhotoBrowseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C47767E1EEE80AA002B8BC8 /* PhotoBrowseController.swift */; };
 		7C4776811EEE80FC002B8BC8 /* PhotoBrowseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4776801EEE80FC002B8BC8 /* PhotoBrowseCell.swift */; };
 		7C4776841EEE8D46002B8BC8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4776821EEE8D46002B8BC8 /* HomeViewController.swift */; };
-		7C4776851EEE8D46002B8BC8 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C4776831EEE8D46002B8BC8 /* Home.storyboard */; };
 		7C4776871EEE9D6A002B8BC8 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4776861EEE9D6A002B8BC8 /* ProgressView.swift */; };
+		7C4776891EEFC2D0002B8BC8 /* PhotoBrowserAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4776881EEFC2D0002B8BC8 /* PhotoBrowserAnimator.swift */; };
+		7C47768F1EEFD4FD002B8BC8 /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C47768E1EEFD4FD002B8BC8 /* PicCollectionView.swift */; };
+		7C4776961EEFE766002B8BC8 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C4776941EEFE766002B8BC8 /* Home.storyboard */; };
 		7C5B7AB91EEA85DE00107BE2 /* compose_emotion_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5B7AAE1EEA85DE00107BE2 /* compose_emotion_delete@2x.png */; };
 		7C5B7ABA1EEA85DE00107BE2 /* compose_emotion_delete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5B7AAF1EEA85DE00107BE2 /* compose_emotion_delete@3x.png */; };
 		7C5B7ABB1EEA85DE00107BE2 /* EmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B7AB01EEA85DE00107BE2 /* EmoticonAttachment.swift */; };
@@ -114,8 +116,10 @@
 		7C47767E1EEE80AA002B8BC8 /* PhotoBrowseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowseController.swift; sourceTree = "<group>"; };
 		7C4776801EEE80FC002B8BC8 /* PhotoBrowseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowseCell.swift; sourceTree = "<group>"; };
 		7C4776821EEE8D46002B8BC8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		7C4776831EEE8D46002B8BC8 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		7C4776861EEE9D6A002B8BC8 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		7C4776881EEFC2D0002B8BC8 /* PhotoBrowserAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserAnimator.swift; sourceTree = "<group>"; };
+		7C47768E1EEFD4FD002B8BC8 /* PicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
+		7C4776951EEFE766002B8BC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		7C5B7AAE1EEA85DE00107BE2 /* compose_emotion_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_emotion_delete@2x.png"; sourceTree = "<group>"; };
 		7C5B7AAF1EEA85DE00107BE2 /* compose_emotion_delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_emotion_delete@3x.png"; sourceTree = "<group>"; };
 		7C5B7AB01EEA85DE00107BE2 /* EmoticonAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonAttachment.swift; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 			children = (
 				7C19C5751EE030B800C04AA8 /* HomeCell.swift */,
 				7C19C5761EE030B800C04AA8 /* HomeCell.xib */,
+				7C47768E1EEFD4FD002B8BC8 /* PicCollectionView.swift */,
 				7C19C57D1EE3A0B800C04AA8 /* PicCollectionViewCell.swift */,
 				7C19C57E1EE3A0B800C04AA8 /* PicCollectionViewCell.xib */,
 			);
@@ -204,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				7C4776821EEE8D46002B8BC8 /* HomeViewController.swift */,
-				7C4776831EEE8D46002B8BC8 /* Home.storyboard */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -268,6 +272,7 @@
 				7C47767E1EEE80AA002B8BC8 /* PhotoBrowseController.swift */,
 				7C4776801EEE80FC002B8BC8 /* PhotoBrowseCell.swift */,
 				7C4776861EEE9D6A002B8BC8 /* ProgressView.swift */,
+				7C4776881EEFC2D0002B8BC8 /* PhotoBrowserAnimator.swift */,
 			);
 			path = PhotoBrowse;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				7C643F6B1ECAF3E500625748 /* Profile */,
 				7C643F551ECAE44C00625748 /* AppDelegate.swift */,
 				7C643F591ECAE44C00625748 /* Main.storyboard */,
+				7C4776941EEFE766002B8BC8 /* Home.storyboard */,
 				7C643F5C1ECAE44C00625748 /* Assets.xcassets */,
 				7C643F5E1ECAE44C00625748 /* LaunchScreen.storyboard */,
 				7C643F611ECAE44C00625748 /* Info.plist */,
@@ -495,7 +501,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C4776851EEE8D46002B8BC8 /* Home.storyboard in Resources */,
+				7C4776961EEFE766002B8BC8 /* Home.storyboard in Resources */,
 				7C643F601ECAE44C00625748 /* LaunchScreen.storyboard in Resources */,
 				7C643F5D1ECAE44C00625748 /* Assets.xcassets in Resources */,
 				7C643F7D1ECEA36C00625748 /* Message.storyboard in Resources */,
@@ -580,6 +586,7 @@
 				7C643F561ECAE44C00625748 /* AppDelegate.swift in Sources */,
 				7C19C57A1EE157E700C04AA8 /* Date + Extension.swift in Sources */,
 				7C5B7AC11EEA85DE00107BE2 /* EmotionPackageModel.swift in Sources */,
+				7C4776891EEFC2D0002B8BC8 /* PhotoBrowserAnimator.swift in Sources */,
 				7C3C58E01EDB98610074624D /* String + Extension.swift in Sources */,
 				7C4776841EEE8D46002B8BC8 /* HomeViewController.swift in Sources */,
 				7C19C5891EE6B6BA00C04AA8 /* ComposeTitleView.swift in Sources */,
@@ -594,6 +601,7 @@
 				7C4776871EEE9D6A002B8BC8 /* ProgressView.swift in Sources */,
 				7C5B7AC01EEA85DE00107BE2 /* EmotionModel.swift in Sources */,
 				7C643FAC1ED53D1400625748 /* TitleButton.swift in Sources */,
+				7C47768F1EEFD4FD002B8BC8 /* PicCollectionView.swift in Sources */,
 				7C643F751ECAF51100625748 /* ProfileViewController.swift in Sources */,
 				7C08FC481EE7D9C700C881AF /* PicPickerCollectionCell.swift in Sources */,
 				7C643FA91ED53A9B00625748 /* UIBarButtonItem+ Extension.swift in Sources */,
@@ -625,6 +633,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		7C4776941EEFE766002B8BC8 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C4776951EEFE766002B8BC8 /* Base */,
+			);
+			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
 		7C643F591ECAE44C00625748 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

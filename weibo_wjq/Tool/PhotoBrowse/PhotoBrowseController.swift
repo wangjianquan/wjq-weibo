@@ -78,6 +78,31 @@ extension PhotoBrowseController : tapImageDelegate{
     }
 }
 
+
+extension PhotoBrowseController : AnimatorDismissDelegate{
+    
+    func imageViewForDismissView() -> UIImageView {
+        let imageview = UIImageView()
+      
+        let cell = collectionview.visibleCells.first as! PhotoBrowseCell
+        imageview.image = cell.imageview.image
+//        imageview.frame = cell.scrollview.convert(cell.imageview.frame, to: UIApplication.shared.keyWindow!)
+        imageview.frame = cell.imageview.frame
+        
+        imageview.contentMode = .scaleAspectFill
+        imageview.clipsToBounds = true
+          return imageview
+    }
+    func indexPathForDismissView() -> IndexPath {
+        // 1.取出正在显示的cell
+        let cell = collectionview.visibleCells.first!
+        
+        // 2.取出该cell所在的下标值
+        return collectionview.indexPath(for: cell)!
+    }
+}
+
+
 extension PhotoBrowseController {
     fileprivate func setupUI() {
         

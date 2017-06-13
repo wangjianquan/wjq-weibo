@@ -82,7 +82,6 @@ class StatusViewModel: NSObject {
             
             source_Text = fromStr + " " + (sourceStr as NSString).substring(with: NSRange(location: startIndex, length: length))
         }
-
         
         /// 保存所有配图URL
         //2. 从模型中取出配图数组

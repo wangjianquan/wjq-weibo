@@ -17,7 +17,7 @@ protocol tapImageDelegate: NSObjectProtocol {
 
 class PhotoBrowseCell: UICollectionViewCell {
     
-   lazy var scrollview = UIScrollView()
+    lazy var scrollView : UIScrollView = UIScrollView()
    lazy var imageview = UIImageView()
     
     //加载进度
@@ -62,10 +62,11 @@ class PhotoBrowseCell: UICollectionViewCell {
 extension PhotoBrowseCell  {
     fileprivate func setupUI() {
     
-        contentView.addSubview(scrollview)
-        contentView.addSubview(imageview)
+        contentView.addSubview(scrollView)
+        scrollView.addSubview(imageview)
         contentView.addSubview(progressView)
-        scrollview.frame.size.width -= 20
+        scrollView.frame = contentView.bounds
+        scrollView.frame.size.width -= 20
      
        
     
@@ -94,7 +95,7 @@ extension PhotoBrowseCell  {
         let screenW = UIScreen.main.bounds.width
         let screenH = UIScreen.main.bounds.height
         
-        let imageWidth = UIScreen.main.bounds.width
+        let imageWidth = screenW
         let imageHeight = imageWidth / (image?.size.width)! * (image?.size.height)!
         
         var y: CGFloat = 0
@@ -111,7 +112,7 @@ extension PhotoBrowseCell  {
         
         imageview.image = image
         
-         scrollview.contentSize = CGSize(width: 0, height: imageHeight)
+        
         
         
         let bigPicUrl = getBigPicURL(url)
@@ -123,7 +124,7 @@ extension PhotoBrowseCell  {
             self.progressView.isHidden = true
         }
 
-       
+        scrollView.contentSize = CGSize(width: 0, height: imageHeight)
         
         
     }

@@ -15,8 +15,8 @@ private let itemMargin : CGFloat = 12
 
 class HomeCell: UITableViewCell {
     
-    @IBOutlet var picCollectionView: UICollectionView!
     
+    @IBOutlet var picCollectionView: PicCollectionView!
    
     
     @IBOutlet var flowLayout: UICollectionViewFlowLayout!
@@ -43,8 +43,7 @@ class HomeCell: UITableViewCell {
     //转发微博正文
     @IBOutlet var retweetedContentLabel: UILabel!
     @IBOutlet var retweetedContentLabelTopCons: NSLayoutConstraint!
-    @IBOutlet var picCollecWidthConstr: NSLayoutConstraint!
-    @IBOutlet var picCollecHeightConstr: NSLayoutConstraint!
+
     
     var  viewModel : StatusViewModel?
     {
@@ -88,15 +87,10 @@ class HomeCell: UITableViewCell {
             picCollectionView.register(nib, forCellWithReuseIdentifier: "PicCollectionViewCell")
             picCollectionView.reloadData()
            
-            //更新配图尺寸
+           
+           
+            picCollectionView.picURLs = viewModel.thumbnail_pic
 
-             let picViewSize = calculatePicViewSize(viewModel.thumbnail_pic.count)
-           
-                //更新collectionview的尺寸
-                picCollecWidthConstr.constant = picViewSize.width
-                picCollecHeightConstr.constant = picViewSize.height
-           
-            
             
            //设置转发正文 
             if viewModel.status.retweeted_status != nil {
@@ -133,54 +127,7 @@ class HomeCell: UITableViewCell {
     
 }
 
-//MARK: -- 
 extension HomeCell {
-
-    // MARK: - 内部控制方法
-    /// 计算cell和collectionview的尺寸
-    fileprivate func calculatePicViewSize(_ count : Int) -> CGSize {
-        // 1.没有配图
-        if count == 0 {
-            return CGSize.zero
-        }
-        
-        // 2.单张配图
-        if count == 1 {
-            // 1.取出图片
-            let urlString = viewModel?.thumbnail_pic
-                .last?.absoluteString
-            let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: urlString)
-            // 2.设置一张图片是layout的itemSize
-            flowLayout.itemSize = CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
-            
-            return CGSize(width: image!.size.width * 2, height: image!.size.height * 2)
-        }
-        
-        // 3.计算出来imageViewWH
-        let imageViewWH = (UIScreen.main.bounds.width - 2 * edgeMargin - 2 * itemMargin) / 3
-        
-        // 4.设置其他张图片时layout的itemSize
-        flowLayout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
-        
-        // 5.四张配图
-        if count == 4 {
-            let picViewWH = imageViewWH * 2 + itemMargin
-            return CGSize(width: picViewWH, height: picViewWH)
-        }
-        
-        // 6.其他张配图
-        // 6.1.计算行数
-        let rows = CGFloat((count - 1) / 3 + 1)
-        
-        // 6.2.计算picView的高度
-        let picViewH = rows * imageViewWH + (rows - 1) * itemMargin
-        
-        // 6.3.计算picView的宽度
-        let picViewW = UIScreen.main.bounds.width - 2 * edgeMargin
-        
-        return CGSize(width: picViewW, height: picViewH)
-    }
-    
     
     func calculateRowHeight(_ viewModel: StatusViewModel) -> CGFloat {
         self.viewModel = viewModel
@@ -188,41 +135,10 @@ extension HomeCell {
         return footerview.frame.maxY
     }
     
-    
 }
 
-extension HomeCell : UICollectionViewDataSource {
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
-    {
-        return viewModel?.thumbnail_pic.count ?? 0
-    
-    }
-    
-    
-   
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
-    {
-    
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PicCollectionViewCell", for: indexPath) as! PicCollectionViewCell
-        
-        cell.url = viewModel!.thumbnail_pic[indexPath.item]
-        
-        return cell
-    }
 
 
-}
 
-extension HomeCell : UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let userInfo = [showPhotoBrowserNotificationIndexPath : indexPath, showPhotoBrowserNotificationURLs : viewModel!.thumbnail_pic] as [String : Any]
-        
-        
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: showPhotoBrowserNotification), object: self, userInfo: userInfo)
-    }
-    
-}
+
 
