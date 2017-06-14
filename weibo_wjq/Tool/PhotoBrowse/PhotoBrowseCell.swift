@@ -92,41 +92,54 @@ extension PhotoBrowseCell  {
         let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: url.absoluteString)
         
         
-        let screenW = UIScreen.main.bounds.width
-        let screenH = UIScreen.main.bounds.height
-        
-        let imageWidth = screenW
-        let imageHeight = imageWidth / (image?.size.width)! * (image?.size.height)!
-        
-        var y: CGFloat = 0
-        
-        if imageHeight > screenH{
-            
-            y = 0
-        }else {
-            y = (screenH - imageHeight) * 0.5
-            
-        }
-        
-        imageview.frame =  CGRect(x: 0, y: y, width: imageWidth, height: imageHeight)
         
         imageview.image = image
         
-        
+        imageFrame(image: image!)
         
         
         let bigPicUrl = getBigPicURL(url)
         progressView.isHidden = false
         imageview.sd_setImage(with: bigPicUrl, placeholderImage: image, options: [], progress: { (current, total) in
-            self.progressView.progress = CGFloat(current) / CGFloat(total)
+           
+            
+            DispatchQueue.main.async(execute: { 
+                 self.progressView.progress = CGFloat(current) / CGFloat(total)
+            })
+           
             
         }) { (_, _, _, _) in
+            self.imageFrame(image: image!)
             self.progressView.isHidden = true
         }
 
+        
+        
+    }
+    //imageFrame and scrollview.contentsize
+    
+    fileprivate func imageFrame(image: UIImage) {
+    
+        let screenW = UIScreen.main.bounds.width
+        let screenH = UIScreen.main.bounds.height
+        
+        let imageWidth = screenW
+        let imageHeight = imageWidth / (image.size.width) * (image.size.height)
+        
+        var y: CGFloat = 0
+        
+        if imageHeight > screenH{
+            //大图
+            y = 0
+        }else {
+            // 小图
+            y = (screenH - imageHeight) * 0.5
+            
+        }
+        
+        imageview.frame =  CGRect(x: 0, y: y, width: imageWidth, height: imageHeight)
         scrollView.contentSize = CGSize(width: 0, height: imageHeight)
-        
-        
+
     }
     
     //MARK: -- 大图
