@@ -34,13 +34,11 @@ extension ComposeTitleView {
     
         addSubview(titleLabel)
         addSubview(screenNameLabel)
-        
         //约束
         titleLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
             make.top.equalTo(self.snp.top)
         }
-        
         screenNameLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.titleLabel.snp.centerX)
             make.top.equalTo(self.titleLabel.snp.bottom).offset(3)

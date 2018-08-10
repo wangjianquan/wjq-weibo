@@ -197,7 +197,6 @@ extension ComposeViewContro {
 extension ComposeViewContro: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
-        self.customTextView.placeHolderLabel.isHidden = textView.hasText
         navigationItem.rightBarButtonItem?.isEnabled = textView.hasText
     }
     

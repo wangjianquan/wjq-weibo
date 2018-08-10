@@ -15,6 +15,7 @@ class TitleButton: UIButton {
         super.init(frame: frame)
         setupUI()
     }
+    
     //Swift中规定, 如果重写了init(frame)或者init()方法,必须实现init?(corder)方法
     //通过xib/SB创建时调用
     required init?(coder aDecoder: NSCoder) {
